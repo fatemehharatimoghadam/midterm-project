@@ -10,43 +10,152 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>project</title>
+    <title>Ngopi Coffee</title>
     <style type="text/tailwindcss">
-        :root{
-
+        :root {
+            /* رنگ‌های اصلی */
+            --color-primary: #282A3A;     
+            --color-secondary: #6D1600;    
+            --color-accent: #FFB31F;      
+            --color-light-bg: #F6F6F6;     
+            --color-white: #FFFFFF;
+            --color-black: #000000;
+            
+            
+            --opacity-50: 0.5;
+            --opacity-56: 0.56;
+            --opacity-70: 0.7;
+            --opacity-72: 0.72;
+            
+           
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --font-alt: 'Roboto', sans-serif;
+            
+            
+            --radius-8: 8px;
+            --radius-32: 32px;
+            --radius-40: 40px;
+            --radius-80: 80px;
+            --radius-120: 120px;
+            --radius-full: 9999px;
+            
+            
+            --container-padding: 80px;      /* px-20 */
+            --section-gap: 80px;           /* gap-20 */
+            --button-height-lg: 80px;      /* h-20 */
+            --button-height-md: 64px;      /* h-16 */
         }
 
-        @theme{
-          
+        
+        @theme {
+           
+            --color-primary: var(--color-primary);
+            --color-secondary: var(--color-secondary);
+            --color-accent: var(--color-accent);
+            --color-light-bg: var(--color-light-bg);
+            
+           
+            --font-family-heading: var(--font-heading);
+            --font-family-body: var(--font-body);
+            --font-family-alt: var(--font-alt);
+            
+            
+            --radius-sm: var(--radius-8);
+            --radius-lg: var(--radius-32);
+            --radius-xl: var(--radius-40);
+            --radius-2xl: var(--radius-80);
+            --radius-3xl: var(--radius-120);
+            --radius-full: var(--radius-full);
+            
+           
+            --spacing-container: var(--container-padding);
+            --spacing-section: var(--section-gap);
+        }
+
+        
+        @utility btn-primary {
+            @apply h-20 px-12 py-6 rounded-tr-[32px] rounded-bl-[32px] bg-[#6D1600] text-white font-normal text-2xl leading-[140%];
+        }
+        
+        @utility btn-secondary {
+            @apply h-[82px] px-[48px] py-6 rounded-tr-[32px] rounded-bl-[32px] bg-[#6D1600] text-white font-normal text-2xl leading-[140%];
+        }
+        
+        @utility text-heading-xl {
+            @apply font-medium text-6xl leading-[120%] text-[#282A3A];
+        }
+        
+        @utility text-heading-lg {
+            @apply font-normal text-4xl leading-[120%] text-[#282A3A];
+        }
+        
+        @utility text-heading-md {
+            @apply font-normal text-3xl leading-[120%] text-[#282A3A];
+        }
+        
+        @utility text-body-xl {
+            @apply font-normal text-2xl leading-[120%] text-[#282A3A];
+        }
+        
+        @utility text-body-lg {
+            @apply font-normal text-xl leading-[160%] text-[#282A3A];
+        }
+        
+        @utility text-body-sm {
+            @apply font-normal text-sm leading-[140%] text-[#282A3A];
+        }
+        
+        @utility text-body-xs {
+            @apply font-normal text-xs leading-[140%] text-[#282A3A];
+        }
+        
+        @utility section-container {
+            @apply w-full p-20 gap-20;
+        }
+        
+        @utility divider-line {
+            @apply h-[1px] px-40 mt-20 relative;
+        }
+        
+        @utility divider-inner {
+            @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-black to-transparent;
+        }
+        
+        @utility card-product {
+            @apply rounded-tr-[40px] rounded-bl-[40px] overflow-hidden;
+        }
+        
+        @utility card-blog {
+            @apply rounded-tr-[96px] rounded-bl-[40px] border-[1px];
         }
     </style>
   </head>
-  <body class="px-2 py-4 ">
-  <header class="w-full sticky top-0 border-b bg-white ">
+  <body class="px-2 py-4">
+  <header class="w-full sticky top-0 border-b bg-white">
     <nav class="container mx-auto flex justify-between items-center px-20 py-6 h-16 bg-white">
-      <img class="" src="/img/Logo.png" alt="">
-      <ul class="hidden md:flex items-center gap-14 ">
-        <li><a href="#Products">Products</a></li>
-        <li><a href="#About us">About us</a></li>
-        <li><a href="#Testimonial"></a>Testimonial</li>
-        <li><a href="#Contact"></a>Contact</li>
+      <img src="/img/Logo.png" alt="Ngopi Logo">
+      <ul class="flex items-center gap-14">
+        <li><a href="#Products" class="text-body-xl text-primary">Products</a></li>
+        <li><a href="#About us" class="text-body-xl text-primary">About us</a></li>
+        <li><a href="#Testimonial" class="text-body-xl text-primary">Testimonial</a></li>
+        <li><a href="#Contact" class="text-body-xl text-primary">Contact</a></li>
       </ul>
-      <div class="flex justify-center items-center gap-4 ">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-cards-icon lucide-wallet-cards"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2"/><path d="M3 11h3c.8 0 1.6.3 2.1.9l1.1.9c1.6 1.6 4.1 1.6 5.7 0l1.1-.9c.5-.5 1.3-.9 2.1-.9H21"/></svg>
+      <div class="flex justify-center items-center gap-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-cards"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2"/><path d="M3 11h3c.8 0 1.6.3 2.1.9l1.1.9c1.6 1.6 4.1 1.6 5.7 0l1.1-.9c.5-.5 1.3-.9 2.1-.9H21"/></svg>
       </div>
     </nav>
   </header>
 
   <main>
-
-    <section class="w-full h-[936px] p-20 gap-20 ">
+    
+    <section class="section-container h-[936px]">
       <div class="w-[631px] h-[348px] mt-20 ml-[400px]">
-        <p class="mt-0 mx-[34px] mb-6 font-medium text-6xl leading-[120%] text-center text-[#282A3A]">Enjoy Your Favorite Coffee with Ngopi</p>
-        <p class="font-normal text-xl leading-[160%] text-center text-[#282A3A]">Discover tranquility at Ngopi a sanctuary for unwinding,
-          where your evenings are perfected with relaxation and rich flavors.</p>
-        <button class="w-[363px] h-20 mt-6 mx-[134px] mb-0 px-12 py-6 flex justify-center items-center rounded-tr-[32px] rounded-bl-[32px] gap-4 bg-[#6D1600]">
-          <p class="font-normal text-2xl leading-[140%] text-white">Explore product</p>
+        <p class="text-heading-xl mt-0 mx-[34px] mb-6 text-center">Enjoy Your Favorite Coffee with Ngopi</p>
+        <p class="text-body-lg text-center">Discover tranquility at Ngopi a sanctuary for unwinding, where your evenings are perfected with relaxation and rich flavors.</p>
+        <button class="btn-primary w-[363px] mt-6 mx-[134px] mb-0 flex justify-center items-center gap-4">
+          <p>Explore product</p>
           <img src="/img/3.png" alt="">
         </button>
       </div>
@@ -59,431 +168,730 @@
       </div>
     </section>
     
-    <div class=" h-[1px] px-40 mt-20 relative">
-      <div class=" absolute bottom-0 left-1/2 -translate-x-1/2  w-3/4 h-px bg-gradient-to-r from-transparent via-black to-transparent"></div>
+    <div class="divider-line">
+      <div class="divider-inner"></div>
     </div>
     
-    <section class="w-full h-[274px] px-20 py-20 flex justify-center items-center">
-      <div class="w-[241px] h-[114px] gap-2 my-20 ml-[170px]   ">
-        <p class="font-normal text-[64px] leading-[120%] tracking-[-2%] text-center text-[#282A3A]">30+</p>
-        <p class="font-normal text-2xl leading-[120%] tracking-[0%] text-center text-[#282A3A] ">Coffee Variant</p>
-      </div>
 
-      <div class="w-[241px] h-[114px] gap-8 my-20 ml-20 ">
-        <p class="font-normal text-[64px] leading-[120%] tracking-[-2%] text-center text-[#282A3A]">20+</p>
-        <p class="font-normal text-2xl leading-[120%] tracking-[0%] text-center text-[#282A3A] ">Meeting room</p>
-      </div>
-
-      <div class="w-[241px] h-[114px] gap-8 my-20 ml-20">
-        <p class="font-normal text-[64px] leading-[120%] tracking-[-2%] text-center text-[#282A3A]">25+</p>
-        <p class="font-normal text-2xl leading-[120%] tracking-[0%] text-center text-[#282A3A] ">Event space</p>
-      </div>
-
-      <div class="w-[241px] h-[114px] gap-8 my-20 ml-20">
-        <p class="font-normal text-[64px] leading-[120%] tracking-[-2%] text-center text-[#282A3A]">40+</p>
-        <p class="font-normal text-2xl leading-[120%] tracking-[0%] text-center text-[#282A3A] ">Global Achievement</p>
-      </div>
-    </section>
-
-    <div class=" h-[1px] px-40 mt-20 relative">
-      <div class=" absolute bottom-0 left-1/2 -translate-x-1/2  w-3/4 h-px bg-gradient-to-r from-transparent via-black to-transparent"></div>
-    </div>
-
-    <section class="w-full h-[961px] p-20 gap-20">
-      <div class="w-[443px] h-20 gap-2 my-20 mx-auto">
-        <p class="opacity-[50%] font-normal text-2xl leading-[120%] tracking-[0%] text-center text-[#282A3A]">Our products</p>
-        <p class="font-normal text-4xl leading-[120%] tracking-[0%] text-center text-[#282A3A]">From Top Quality Materials</p>
-      </div>
-      <div class="w-[1280px] h-[641px] mx-20 my-20 gap-10  ">
-        <div class="w-[556px] h-[77px] rounded-[40px] p-2 mt-0 mx-[362px] bg-[#F6F6F6] flex justify-center items-center">
-          <div class="w-[180px] h-[61px] rounded-[40px] border-b-2 px-10 py-4 gap-[10px] bg-white">
-            <p class="opacity-[70%] font-normal text-2xl leading-[120%] tracking-[2%] text-[#282A3A] text-center">Latte</p>
-          </div>
-          <div class="w-[180px] h-[61px] rounded-[40px] border-b-[0.5px] px-10 py-4 gap-[10px]">
-            <p class="opacity-[70%] font-normal text-2xl leading-[120%] tracking-[2%] text-center text-[#282A3A]">Robusta</p>
-          </div>
-          <div class="w-[180px] h-[61px] rounded-[40px] border-b-[0.5px] px-10 py-4 gap-[10px] ">
-            <p class="opacity-[70%] font-normal text-2xl leading-[120%] tracking-[2%] text-[#282A3A]">Acabica</p>
-          </div>
-        </div>
-        <div class="w-[1280px] h-[476px] mx-0 my-10 flex grid-cols-4 gap-6 ">
-          <div class="w-[302px] h-[476px]">
-            <img class="w-[302px] h-60 rounded-tr-[40px] rounded-bl-[40px]" src="/img/9.jpg" alt="">
-            <div class="w-[302px] h-[236] px-6 py-4 gap-4">
-              <p class="w-[254px] h-[34px] font-semibold text-2xl leading-[140%] tracking-[0%] text-[#282A3A] text-start ">Chocolate Latte</p>
-              <div class="w-[254px] h-6 gap-2 mx-6 my-4 flex justify-start items-start">
-                <div class="rounded-[1px] flex justify-start items-start gap-1 text-[#FFB31F]">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <p class="opacity-[70%] font-bold text-xl leading-[120%] tracking-[2%] text-[#282A3A]">4.9</p>
-                </div>
-                <p class="opacity-[72%] font-normal text-sm leading-[140%] tracking-[0%] text-[#282A3A]">(360 reviews)</p>
-                </div>
-            </div>
-            <p class="w-[254px] h-[55px] opacity-[72%] mx-6 mt-0 font-normal text-xs leading-[140%] tracking-[0%] text-[#282A3A] text-start">Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla</p>
-            <div class="w-[254px] h-8 gap-4 mx-6 my-4 flex justify-between">
-              <p class="w-[158] h-6 opacity-[70%] font-bold text-xl leading-[120%] tracking-[2%] text-[#282A3A]">$2.9</p>
-              <div class="w-20 h-8 rounded-[8px] bg-[#6D1600] text-white flex justify-center items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
-              </div>
-            </div>
-          </div>
-
-          <div class="w-[302px] h-[476px] ">
-            <img class="w-[302px] h-60 rounded-tr-[40px] rounded-bl-[40px]" src="/img/10.jpg" alt="">
-            <div class="w-[302px] h-[236] px-6 py-4 gap-4">
-              <p class="w-[254px] h-[34px] font-semibold text-2xl leading-[140%] tracking-[0%] text-[#282A3A] text-start ">Mocha Latte</p>
-              <div class="w-[254px] h-6 gap-2 mx-6 my-4 flex justify-start items-start">
-                <div class="rounded-[1px] flex justify-start items-start gap-1 text-[#FFB31F]">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <p class="opacity-[70%] font-bold text-xl leading-[120%] tracking-[2%] text-[#282A3A]">5.0</p>
-                </div>
-                <p class="opacity-[72%] font-normal text-sm leading-[140%] tracking-[0%] text-[#282A3A]">(180 reviews)</p>
-                </div>
-            </div>
-            <p class="w-[254px] h-[55px] opacity-[72%] mx-6 mt-0 font-normal text-xs leading-[140%] tracking-[0%] text-[#282A3A] text-start">Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla</p>
-            <div class="w-[254px] h-8 gap-4 mx-6 my-4 flex justify-between">
-              <p class="w-[158] h-6 opacity-[70%] font-bold text-xl leading-[120%] tracking-[2%] text-[#282A3A]">$2.7</p>
-              <div class="w-20 h-8 rounded-[8px] bg-[#6D1600] text-white flex justify-center items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
-              </div>
-            </div>
-          </div>
-
-          <div class="w-[302px] h-[476px] ">
-            <img class="w-[302px] h-60 rounded-tr-[40px] rounded-bl-[40px]" src="/img/11.jpg" alt="">
-            <div class="w-[302px] h-[236] px-6 py-4 gap-4">
-              <p class="w-[254px] h-[34px] font-semibold text-2xl leading-[140%] tracking-[0%] text-[#282A3A] text-start ">Coffee Latte</p>
-              <div class="w-[254px] h-6 gap-2 mx-6 my-4 flex justify-start items-start">
-                <div class="rounded-[1px] flex justify-start items-start gap-1 text-[#FFB31F]">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <p class="opacity-[70%] font-bold text-xl leading-[120%] tracking-[2%] text-[#282A3A]">4.8</p>
-                </div>
-                <p class="opacity-[72%] font-normal text-sm leading-[140%] tracking-[0%] text-[#282A3A]">(450 reviews)</p>
-                </div>
-            </div>
-            <p class="w-[254px] h-[55px] opacity-[72%] mx-6 mt-0 font-normal text-xs leading-[140%] tracking-[0%] text-[#282A3A] text-start">Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla</p>
-            <div class="w-[254px] h-8 gap-4 mx-6 my-4 flex justify-between">
-              <p class="w-[158] h-6 opacity-[70%] font-bold text-xl leading-[120%] tracking-[2%] text-[#282A3A]">$2.9</p>
-              <div class="w-20 h-8 rounded-[8px] bg-[#6D1600] text-white flex justify-center items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
-              </div>
-            </div>
-          </div>
-
-           <div class="w-[302px] h-[476px] ">
-            <img class="w-[302px] h-60 rounded-tr-[40px] rounded-bl-[40px]" src="/img/12.jpg" alt="">
-            <div class="w-[302px] h-[236] px-6 py-4 gap-4">
-              <p class="w-[254px] h-[34px] font-semibold text-2xl leading-[140%] tracking-[0%] text-[#282A3A] text-start ">Hazelnut Latte</p>
-              <div class="w-[254px] h-6 gap-2 mx-6 my-4 flex justify-start items-start">
-                <div class="rounded-[1px] flex justify-start items-start gap-1 text-[#FFB31F]">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <p class="opacity-[70%] font-bold text-xl leading-[120%] tracking-[2%] text-[#282A3A]">4.9</p>
-                </div>
-                <p class="opacity-[72%] font-normal text-sm leading-[140%] tracking-[0%] text-[#282A3A]">(390 reviews)</p>
-                </div>
-            </div>
-            <p class="w-[254px] h-[55px] opacity-[72%] mx-6 mt-0 font-normal text-xs leading-[140%] tracking-[0%] text-[#282A3A] text-start">Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla</p>
-            <div class="w-[254px] h-8 gap-4 mx-6 my-4 flex justify-between">
-              <p class="w-[158] h-6 opacity-[70%] font-bold text-xl leading-[120%] tracking-[2%] text-[#282A3A]">$2.8</p>
-              <div class="w-20 h-8 rounded-[8px] bg-[#6D1600] text-white flex justify-center items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="w-11 h-2 flex justify-center items-center gap-1">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot-icon lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot-icon lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot-icon lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot-icon lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
-        </div> -->
-      </div>
-    </section>
- 
-    <div class=" h-[1px] px-40 mt-20 relative">
-      <div class=" absolute bottom-0 left-1/2 -translate-x-1/2  w-3/4 h-px bg-gradient-to-r from-transparent via-black to-transparent"></div>
-    </div>
-
-    <section class="w-full h-[762px] p-20 gap-20">
-      <div class="w-[322px] h-20 gap-2 mx-[559px] mt-20 ">
-        <a class="opacity-[56%] font-normal text-2xl leading-[120%] tracking-[0%] underline decoration-solid underline-offset-0 decoration-[0%] text-[#282A3A] text-center" href="https://www.google.com/">
-          <p>About us</p>
-        </a> 
-        <p class="font-normal text-3xl leading-[120%] tracking-[0%] text-center text-[#282A3A]">Why we are the best</p>
-      </div>
-      <div class="w-[1280px] h-[442px] mx-20 my-20 flex justify-center items-center gap-20">
-        <div class="w-[600px] h-[442px]">
-          <a class="h-[128px] font-normal text-xl leading-[160%] tracking-0 underline underline-offset-0 text-[#282A3A]" href="https://www.google.com/">
-            <p>Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla volutpat lectus amet. Integer sed pretium odio lectus at malesuada sed eget nunc. Viverra malesuada viverra id vel tortor dui adipiscing.</p>
-          </a>
-          <p class="h-[96px] mt-6 font-normal text-xl leading-[160%] tracking-[0%] text-[#282A3A]">Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla volutpat lectus amet. Integer sed pretium odio lectus at malesuada sed eget nunc.</p>
-          <p class="h-[64px] mt-6 font-normal text-xl leading-[160%] tracking-[0%] text-[#282A3A]">Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla volutpat lectus amet.</p>
-          <button class="w-[280px] h-[82px] mt-6 rounded-tr-[32px] rounded-bl-[32px] px-[48px] py-6 bg-[#6D1600] flex justify-center items-center gap-4">
-            <p class="font-normal text-2xl leading-[140%] tracking-[0%] text-[#FFFFFF]">Read More</p>
-            <div class="text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down-right-icon lucide-arrow-down-right"><path d="m7 7 10 10"/><path d="M17 7v10H7"/></svg>
-            </div>
-          </button>
-        </div>
-
-        <div class="w-[600px] h-[442px] grid-cols-2 gap-6">
-          <div class="w-[288px] h-[442px] pt-16 ">
-            <img class=" rounded-tr-[120px] rounded-bl-[120px] py-20 " src="" alt="">
-          </div>
-          <div class="w-[288px] h-[442px] pb-16">
-            <img class="" src="" alt="">
-          </div> 
-        </div>
-      </div>
-
-    </section>
-
-
-    <div class=" h-[1px] px-40 mt-20 relative">
-      <div class=" absolute bottom-0 left-1/2 -translate-x-1/2  w-3/4 h-px bg-gradient-to-r from-transparent via-black to-transparent"></div>
-    </div>
-
-    <section class="w-[1440px] h-[728px]  my-20 gap-20">
-      <div class="w-[328px] h-20 gap-2 mx-[556px]">
-        <p class=" h-[29px] opacity-[56%] font-normal text-2xl leading-[120%] tracking-[0%] text-center text-[#282A3A]">Testimonial</p>
-        <p class="h-[43px] font-normal text-4xl leading-[120%] tracking-[0%] text-center text-[#282A3A]">What our buyers say</p>
-      </div>
-
-      <div class="w-[1280px] h-[408px] gap-10 mx-20 my-20">
-        <div class=" flex justify-center items-center ">
-          <div class="w-[405px] h-[360px] rounded-3xl px-10 py-6 gap-4">
-            <div class="w-[325px] h-[100px] gap-4 flex">
-              <img class="w-[100px] h-[100px] rounded-full" src="/img/13.jpg" alt="">
-              <div class="w-[137px] h-[56px] gap-2 my-[22px] ml-4">
-                <p class="h-6 font-semibold text-xl leading-[120%] tracking-[0%] text-center text-[#282A3A]">Michael Wong</p>
-                <div class="w-[120px] h-6 text-[#FFB31F] flex justify-center items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                </div>
-              </div>
-            </div>
-            <p class="w-[325px] h-[196px] mt-4 my-10 mb-6 font-normal text-xl leading-[140%] tracking-[0%] text-[#282A3A]">Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla volutpat lectus amet. Integer sed pretium odio lectus at malesuada sed eget nunc. Viverra malesuada viverra id vel tortor dui adipiscing.</p>
-          </div>
-          <div class="w-[405px] h-[332px] rounded-3xl px-10 py-6 gap-4">
-            <div class="w-[325px] h-[100px] gap-4 flex">
-              <img class="w-[100px] h-[100px] rounded-full " src="/img/14.jpg" alt="">
-              <div class="w-[120px] h-[56px] gap-2 ml-4 my-[22px] mr-[89px]">
-                <p class="h-6 font-semibold text-xl leading-[120%] tracking-[0%] text-center text-[#282A3A]">Avril Song</p>
-                <div class="w-[120px] h-6 text-[#FFB31F] flex justify-center items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                </div>
-              </div>
-            </div>
-            <p class="w-[325px] h-[196px] mt-4 my-10 mb-6 font-normal text-xl leading-[140%] tracking-[0%] text-[#282A3A]">Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla volutpat lectus amet. Integer sed pretium odio lectus at malesuada sed eget nunc.</p>
-          </div>
-          <div class="w-[405px] h-[332px] rounded-3xl px-10 py-6 gap-4">
-            <div class="w-[325px] h-[100px] gap-4 flex">
-              <img class="w-[100px] h-[100px] rounded-full" src="/img/15.jpg" alt="">
-              <div class="w-[130px] h-[56px] gap-2 my-[22px] ml-4 mr-[77px]">
-                <p class="w-[132px]  h-6 font-semibold text-xl leading-[120%] tracking-[0%] text-center text-[#282A3A]">Jeanne Wood</p>
-                <div class="w-[120px] h-6 text-[#FFB31F] flex justify-center items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                </div>
-              </div>
-            </div>
-            <p class="w-[325px] h-[196px] mt-4 my-10 mb-6 font-normal text-xl leading-[140%] tracking-[0%] text-[#282A3A]">Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla volutpat lectus amet. Integer sed pretium odio lectus at malesuada sed eget nunc. Viverra malesuada viverra id vel tortor dui adipiscing.</p>
-          </div>
-        </div>
-
-        <!-- <div class="w-11 h-2 gap-2 mx-[618px] mt-10  flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot-icon lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot-icon lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot-icon lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot-icon lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
-        </div>
-      </div> -->
-
-    </section>
-
-    <div class=" h-[1px] px-40 mt-20 relative">
-      <div class=" absolute bottom-0 left-1/2 -translate-x-1/2  w-3/4 h-px bg-gradient-to-r from-transparent via-black to-transparent"></div>
-    </div>
-
-    <section class="w-full h-[1023px] p-20 grid gap-20">
+    <section class="w-full py-20 flex justify-center items-center bg-white">
+  <div class="flex justify-between items-center max-w-6xl mx-auto gap-16">
+    
+  
+    <div class="flex flex-col items-center justify-center w-60">
       
-        <div class="font-normal text-center">
-          <p class="text-2xl opacity-[56%] leading-[120%]"> Blog </p>
-          <h1 class="text-4xl leading-[120%] "> Read our articles </h1>
+      <p class="font-body text-6xl md:text-7xl font-normal text-primary mb-3 tracking-[-2%]">30+</p>
+      
+      <p class="font-heading text-2xl font-normal text-primary tracking-[0%]">Coffee Variant</p>
+    </div>
+    
+  
+    <div class="h-24 w-px bg-gray-200"></div>
+    
+    
+    <div class="flex flex-col items-center justify-center w-60">
+      <p class="font-body text-6xl md:text-7xl font-normal text-primary mb-3 tracking-[-2%]">20+</p>
+      <p class="font-heading text-2xl font-normal text-primary tracking-[0%]">Meeting room</p>
+    </div>
+    
+    
+    <div class="h-24 w-px bg-gray-200"></div>
+    
+    
+    <div class="flex flex-col items-center justify-center w-60">
+      <p class="font-body text-6xl md:text-7xl font-normal text-primary mb-3 tracking-[-2%]">25+</p>
+      <p class="font-heading text-2xl font-normal text-primary tracking-[0%]">Event space</p>
+    </div>
+    
+    
+    <div class="h-24 w-px bg-gray-200"></div>
+    
+    
+    <div class="flex flex-col items-center justify-center w-60">
+      <p class="font-body text-6xl md:text-7xl font-normal text-primary mb-3 tracking-[-2%]">40+</p>
+      <p class="font-heading text-xl font-normal text-primary tracking-[0%]">Global Achievement</p>
+    </div>
+    
+  </div>
+</section>
+
+    <div class="divider-line">
+      <div class="divider-inner"></div>
+    </div>
+
+    
+<section class="section-container py-20 ">
+  
+  
+  <div class="w-[443px] h-20 gap-2 mx-auto mb-16">
+    <p class="opacity-[50%] text-body-xl text-center">Our products</p>
+    <p class="text-heading-lg text-center">From Top Quality Materials</p>
+  </div>
+  
+  >
+  <div class="flex justify-center mb-16">
+    <div class="flex gap-4 rounded-[40px] p-2 bg-light-bg">
+      <button class="w-[180px] h-[61px] rounded-[40px] px-10 py-4 bg-white hover:bg-white/90 transition-all duration-200">
+        <p class="opacity-[70%] text-body-xl text-center">Latte</p>
+      </button>
+      <button class="w-[180px] h-[61px] rounded-[40px] px-10 py-4 hover:bg-white/50 transition-all duration-200">
+        <p class="opacity-[70%] text-body-xl text-center">Robusta</p>
+      </button>
+      <button class="w-[180px] h-[61px] rounded-[40px] px-10 py-4 hover:bg-white/50 transition-all duration-200">
+        <p class="opacity-[70%] text-body-xl text-center">Acabica</p>
+      </button>
+    </div>
+  </div>
+  
+  
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-4 gap-8">
+      
+      
+      <div class="group w-[302px] overflow-hidden flex flex-col h-full">
+        <div class="relative w-[302px] h-60 rounded-tr-[40px] rounded-bl-[40px] overflow-hidden flex-shrink-0">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+               src="/img/9.jpg" alt="Chocolate Latte">
         </div>
-
-        <div class="w-full h-[541px] grid-cols-1 flex gap-8  container mx-20 ">
-
-          <div class="w-[405px] h-[541px] rounded-tr-[96px] rounded-bl-[40px] border-[1px] p-4 gap-4">
-            <img class="w-[373px] h-[320px] rounded-tr-[80px] rounded-bl-[80px] " src="/img/16.jpg" alt="">
-            <div class="flex justify-between items-center text-sm font-normal mt-4 ">
-              <div class="flex gap-2 ">
-                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-icon lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-                <p> John Doe </p>
-              </div>
-              <div class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-icon lucide-calendar"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-                <p> Feb 23, 2024 </p>
-              </div>
+        
+        <div class="px-6 pt-6 flex-grow flex flex-col">
+          <p class="font-semibold text-2xl leading-[140%] text-primary mb-4">Chocolate Latte</p>
+          
+          <div class="flex items-center gap-2 mb-4">
+            <div class="flex text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
             </div>
-            <p class=" text-lg mt-4">
-              Lorem ipsum dolor sit amet consectetur. Est tempor morbi pellentesque.
-            </p>
-            <button class="flex justify-end items-end gap-2 mt-4">
-              <p class=" font-normal"> View details </p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
-            </button>
+            <div class="flex items-center gap-1">
+              <span class="opacity-[70%] font-bold text-xl text-primary">4.9</span>
+              <span class="opacity-[72%] text-body-sm text-primary ml-1">(360 reviews)</span>
+            </div>
           </div>
-
-         <div class="w-[405px] h-[541px] rounded-tr-[96px] rounded-bl-[40px] border-[1px] p-4 gap-4">
-            <img class="w-[373px] h-[320px] rounded-tr-[80px] rounded-bl-[80px] " src="/img/17.jpg" alt="">
-            <div class="flex justify-between items-center text-sm font-normal mt-4 ">
-              <div class="flex gap-2 ">
-                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-icon lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-                <p> John Doe </p>
-              </div>
-              <div class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-icon lucide-calendar"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-                <p> Feb 23, 2024 </p>
-              </div>
-            </div>
-            <p class=" text-lg mt-4">
-              Lorem ipsum dolor sit amet consectetur. Est tempor morbi pellentesque.
-            </p>
-            <button class="flex justify-end items-end gap-2 mt-4">
-              <p class=" font-normal"> View details </p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
-            </button>
-          </div>
-
-          <div class="w-[405px] h-[541px] rounded-tr-[96px] rounded-bl-[40px] border-[1px] p-4 gap-4">
-            <img class="w-[373px] h-[320px] rounded-tr-[80px] rounded-bl-[80px] " src="/img/18.jpg" alt="">
-            <div class="flex justify-between items-center text-sm font-normal mt-4 ">
-              <div class="flex gap-2 ">
-                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-icon lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-                <p> John Doe </p>
-              </div>
-              <div class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-icon lucide-calendar"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-                <p> Feb 23, 2024 </p>
-              </div>
-            </div>
-            <p class=" text-lg mt-4">
-              Lorem ipsum dolor sit amet consectetur. Est tempor morbi pellentesque.
-            </p>
-            <button class="flex justify-end items-end gap-2 mt-4">
-              <p class=" font-normal"> View details </p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+          
+          <p class="opacity-[72%] text-body-xs mb-6 leading-relaxed flex-grow">
+            Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla
+          </p>
+          
+          <div class="flex justify-between items-center mt-auto pt-4">
+            <p class="opacity-[70%] font-bold text-xl text-primary">$2.9</p>
+            <button class="w-20 h-8 rounded-[8px] bg-secondary text-white flex justify-center items-center hover:bg-secondary/90 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"/><path d="M12 5v14"/>
+              </svg>
             </button>
           </div>
         </div>
+      </div>
+      
+      
+      <div class="group w-[302px] overflow-hidden flex flex-col h-full">
+        <div class="relative w-[302px] h-60 rounded-tr-[40px] rounded-bl-[40px] overflow-hidden flex-shrink-0">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+               src="/img/10.jpg" alt="Mocha Latte">
+        </div>
+        
+        <div class="px-6 pt-6 flex-grow flex flex-col">
+          <p class="font-semibold text-2xl leading-[140%] text-primary mb-4">Mocha Latte</p>
+          
+          <div class="flex items-center gap-2 mb-4">
+            <div class="flex text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="opacity-[70%] font-bold text-xl text-primary">5.0</span>
+              <span class="opacity-[72%] text-body-sm text-primary ml-1">(180 reviews)</span>
+            </div>
+          </div>
+          
+          <p class="opacity-[72%] text-body-xs mb-6 leading-relaxed flex-grow">
+            Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla
+          </p>
+          
+          <div class="flex justify-between items-center mt-auto pt-4">
+            <p class="opacity-[70%] font-bold text-xl text-primary">$2.7</p>
+            <button class="w-20 h-8 rounded-[8px] bg-secondary text-white flex justify-center items-center hover:bg-secondary/90 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"/><path d="M12 5v14"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="group w-[302px] overflow-hidden flex flex-col h-full">
+        <div class="relative w-[302px] h-60 rounded-tr-[40px] rounded-bl-[40px] overflow-hidden flex-shrink-0">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+               src="/img/11.jpg" alt="Coffee Latte">
+        </div>
+        
+        <div class="px-6 pt-6 flex-grow flex flex-col">
+          <p class="font-semibold text-2xl leading-[140%] text-primary mb-4">Coffee Latte</p>
+          
+          <div class="flex items-center gap-2 mb-4">
+            <div class="flex text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="opacity-[70%] font-bold text-xl text-primary">4.8</span>
+              <span class="opacity-[72%] text-body-sm text-primary ml-1">(450 reviews)</span>
+            </div>
+          </div>
+          
+          <p class="opacity-[72%] text-body-xs mb-6 leading-relaxed flex-grow">
+            Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla
+          </p>
+          
+          <div class="flex justify-between items-center mt-auto pt-4">
+            <p class="opacity-[70%] font-bold text-xl text-primary">$2.9</p>
+            <button class="w-20 h-8 rounded-[8px] bg-secondary text-white flex justify-center items-center hover:bg-secondary/90 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"/><path d="M12 5v14"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="group w-[302px] overflow-hidden flex flex-col h-full">
+        <div class="relative w-[302px] h-60 rounded-tr-[40px] rounded-bl-[40px] overflow-hidden flex-shrink-0">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+               src="/img/12.jpg" alt="Hazelnut Latte">
+        </div>
+        
+        <div class="px-6 pt-6 flex-grow flex flex-col">
+          <p class="font-semibold text-2xl leading-[140%] text-primary mb-4">Hazelnut Latte</p>
+          
+          <div class="flex items-center gap-2 mb-4">
+            <div class="flex text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="opacity-[70%] font-bold text-xl text-primary">4.9</span>
+              <span class="opacity-[72%] text-body-sm text-primary ml-1">(390 reviews)</span>
+            </div>
+          </div>
+          
+          <p class="opacity-[72%] text-body-xs mb-6 leading-relaxed flex-grow">
+            Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla
+          </p>
+          
+          <div class="flex justify-between items-center mt-auto pt-4">
+            <p class="opacity-[70%] font-bold text-xl text-primary">$2.8</p>
+            <button class="w-20 h-8 rounded-[8px] bg-secondary text-white flex justify-center items-center hover:bg-secondary/90 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"/><path d="M12 5v14"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    
+    <div class="flex gap-1 justify-center mt-12">
+      <div class="text-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
+      </div>
+      <div class="text-primary/30">
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
+      </div>
+      <div class="text-primary/30"> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
+      </div>  
+      <div class="text-primary/30"> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <button class="w-[280px] h-[82px] mx-auto rounded-tr-[32px] rounded-bl-[32px] text-white flex items-center justify-center px-12 py-6 gap-4 bg-[#6D1600] ">
-          <p class=" font-normal text-xl leading-[140%] "> Read More </p>
-          <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-down-right-icon lucide-move-down-right"><path d="M19 13V19H13"/><path d="M5 5L19 19"/></svg>
+ 
+    <div class="divider-line">
+      <div class="divider-inner"></div>
+    </div>
+
+
+   <section class="section-container py-20">
+  <div class="max-w-6xl mx-auto my-0">
+    
+    
+    <div class="text-center mb-16">
+      <a class="opacity-[56%] text-body-xl underline decoration-solid text-center text-primary block mb-2" href="https://www.google.com/">
+        <p>About us</p>
+      </a> 
+      <p class="text-heading-md text-center">Why we are the best</p>
+    </div>
+    
+    
+    <div class="flex items-center justify-between gap-12">
+      
+      
+      <div class="w-1/2">
+        <a class="block mb-6 text-body-lg underline text-primary hover:text-primary/80 transition-colors" href="https://www.google.com/">
+          <p>Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla volutpat lectus amet. Integer sed pretium odio lectus at malesuada sed eget nunc. Viverra malesuada viverra id vel tortor dui adipiscing.</p>
+        </a>
+        <p class="text-body-lg mb-6">Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla volutpat lectus amet. Integer sed pretium odio lectus at malesuada sed eget nunc.</p>
+        <p class="text-body-lg mb-8">Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla volutpat lectus amet.</p>
+        <button class="btn-secondary flex justify-center items-center gap-4 hover:bg-secondary/90 transition-colors">
+          <p>Read More</p>
+          <div class="text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down-right"><path d="m7 7 10 10"/><path d="M17 7v10H7"/></svg>
           </div>
         </button>
-
-      </section>
-
-
-      <footer class="w-full h-[528px] p-20 gap-20 flex text-white bg-[#282A3A]">
-
-        <div class="w-[382px] h-[310px] grid gap-8 ">
-          <div class="flex gap-6 items-center">
-            <img class="w-[58px] h-[58px] " src="/img/19.png" alt="">
-            <p class="text-2xl font-normal leading-[120%] "> Ngopi </p>
-          </div>  
-          <p class="font-normal text-xl leading-[160%]">
-            Discover tranquility at Ngopi a <br>
-             sanctuary for unwinding, where your <br>
-              evenings are perfected with relaxation <br>
-               and rich flavors.
-          </p>
-          <p class="font-normal text-xl leading-[100%]">
-            <a href="www.google.com"> hello@ngopi.com </a>
-             <br> Phone : +01 23456789 
-          </p>
-        </div>
-
-        <nav class="w-[818px] h-[368px] grid gap-10">
-          <div class="h-[187px] flex justify-between ">
-
-            <div class="flex flex-col gap-6">
-              <p class="font-normal text-lg text-center"> Quick Links </p>
-              <ul class="w-[86px] h-[124px] gap-4">
-                <li> Services </li>
-                <li> Portfolio </li>
-                <li> About us </li>
-                <li> Testimonial </li>
-              </ul>
-            </div>
-
-            <div class="flex flex-col gap-6 ">
-              <p class="font-normal text-2xl leading-[140%] text-center"> Resources </p>
-              <div>
-                <li class="relative">
-                   <a href="https://estudy.framer.website/" target="_blank"> Support </a>
-                      <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-max px-4 py-2 bg-black/90 shadow-lg rounded-lg border border-gray-200 text-sm text-white flex items-center gap-2 opacity-0 group-hover:opacity-100 transition duration-1000 pointer-events-auto z-10">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-paperclip-icon lucide-paperclip"><path d="m16 6-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414-8.586a4 4 0 1 0-5.657-5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379-8.551"/></svg>
-                            <a href="https://estudy.framer.website/" class="flex items-center gap-2 " target="_blank"> Open estudy.framer.website </a>
-                      </div>
-                </li> 
-                <li> Privacy Policy </li>
-                <li> Terms & Conditions </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="hidden sm:flex flex-col gap-6">
-              <p class="text-2xl font-serif"> Social Media </p>
-              <div class="flex gap-2 opacity-70 h-12 w-68">
-                <div class="w-full h-full flex items-center justify-center bg-white/8">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook-icon lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                </div>
-                <div class="w-full h-full flex items-center justify-center bg-white/8">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter-icon lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-                </div>
-                <div class="w-full h-full flex items-center justify-center bg-white/8">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram-icon lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                </div>
-                <div class="w-full h-full flex items-center justify-center bg-white/8">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin-icon lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                </div>
-                <div class="w-full h-full flex items-center justify-center bg-white/8">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube-icon lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="font-normal grid gap-6">
-            <p class="text-xl sm:text-2xl font-serif">  Subscribe </p>
-            <div class="bg-white/8 rounded-2xl py-2 pr-2 pl-6 flex justify-between items-center">
-              <div class=" flex gap-2 items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail w-4 h-4 sm:w-auto sm:h-auto"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
-                <input class="placeholder-white/40 text-white/40 placeholder:text-sm sm:placeholder:text-xl" type="email" placeholder="name@domain.com">
-              </div>
-              <button class="w-16 h-8 sm:w-44 sm:h-16 bg-dark-rust text-base sm:text-xl rounded-lg cursor-pointer hover:shadow-lg hover:bg-dark-rust/85">
-                send
-              </button>
-            </div> 
-            
-          </div>
-        </nav>
-      </footer>
+      </div>
       
+      
+      <div class="w-1/2">
+        <div class="grid grid-cols-2 gap-6 h-full">
+          
+          <div class="flex items-start pt-16">
+            <img 
+              class="w-full rounded-tr-[120px] rounded-bl-[120px] aspect-[2.8/3.7] object-cover"
+              src="/img/5.jpg"
+              alt="Coffee shop interior"
+            >
+          </div>
+          
+          
+          <div class="flex items-end pb-16">
+            <img 
+              class="w-full rounded-tl-[120px] rounded-br-[120px] aspect-[2.8/3.7] object-cover"
+              src="/img/4.jpg"
+              alt="Coffee being prepared"
+            >
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+   
+
+    <div class="divider-line">
+      <div class="divider-inner"></div>
+    </div>
+
+    
+  <section class="py-20">
+  <div class="max-w-7xl mx-auto my-0 px-8">
+    
+    
+    <div class="text-center mb-16">
+      <p class="opacity-[56%] text-body-xl text-center text-primary mb-2">Testimonial</p>
+      <p class="text-heading-lg text-center">What our buyers say</p>
+    </div>
+    
+    
+    <div class="flex justify-center items-center gap-8 mb-12">
+      
+     
+      <div class="group w-[405px] h-[360px] rounded-3xl px-10 py-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+        <div class="w-[325px] h-[100px] gap-4 flex items-center mb-6">
+          
+          <div class="relative w-[100px] h-[100px] rounded-full overflow-hidden flex-shrink-0">
+            <img 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+              src="/img/13.jpg" 
+              alt="Michael Wong"
+            >
+          </div>
+          <div class="ml-4">
+            <p class="font-semibold text-xl leading-[120%] text-primary mb-2">Michael Wong</p>
+            <div class="flex text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+            </div>
+
+          </div>
+        </div>
+        <p class="text-body-lg leading-relaxed">
+          Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla volutpat lectus amet. Integer sed pretium odio lectus at malesuada sed eget nunc. Viverra malesuada viverra id vel tortor dui adipiscing.
+        </p>
+      </div>
+      
+      
+      <div class="group w-[405px] h-[332px] rounded-3xl px-10 py-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+        <div class="w-[325px] h-[100px] gap-4 flex items-center mb-6">
+          <div class="relative w-[100px] h-[100px] rounded-full overflow-hidden flex-shrink-0">
+            <img 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+              src="/img/14.jpg" 
+              alt="Avril Song"
+            >
+          </div>
+          <div class="ml-4">
+            <p class="font-semibold text-xl leading-[120%] text-primary mb-2">Avril Song</p>
+            <div class="flex text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+            </div>
+
+          </div>
+        </div>
+        <p class="text-body-lg leading-relaxed">
+          Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla volutpat lectus amet. Integer sed pretium odio lectus at malesuada sed eget nunc.
+        </p>
+      </div>
+      
+     
+      <div class="group w-[405px] h-[332px] rounded-3xl px-10 py-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+        <div class="w-[325px] h-[100px] gap-4 flex items-center mb-6">
+          <div class="relative w-[100px] h-[100px] rounded-full overflow-hidden flex-shrink-0">
+            <img 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+              src="/img/15.jpg" 
+              alt="Jeanne Wood"
+            >
+          </div>
+          <div class="ml-4">
+            <p class="font-semibold text-xl leading-[120%] text-primary mb-2">Jeanne Wood</p>
+            <div class="flex text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+              </svg>
+            </div>
+
+          </div>
+        </div>
+        <p class="text-body-lg leading-relaxed">
+          Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla volutpat lectus amet. Integer sed pretium odio lectus at malesuada sed eget nunc. Viverra malesuada viverra id vel tortor dui adipiscing.
+        </p>
+      </div>
+      
+    </div>
+    
+   
+    <div class="flex gap-1 justify-center mt-8">
+      <div class="text-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
+      </div>
+      <div class="text-primary/30">
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
+      </div>
+      <div class="text-primary/30"> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
+      </div>  
+      <div class="text-primary/30"> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<div class="divider-line">
+  <div class="divider-inner"></div>
+</div>
+
+<section class="py-20 px-8">
+  <div class="max-w-7xl mx-auto">
+    
+    
+    <div class="text-center mb-16">
+      <p class="text-2xl opacity-[56%] leading-[120%] text-primary mb-2">Blog</p>
+      <h1 class="text-4xl leading-[120%] text-primary font-heading">Read our articles</h1>
+    </div>
+    
+    
+    <div class="flex justify-center gap-8 mb-12">
+      
+    
+      <div class="group w-[405px] h-[541px] rounded-tr-[96px] rounded-bl-[40px] border border-gray-200 p-4 hover:shadow-xl hover:border-gray-300 transition-all duration-300 hover:-translate-y-2">
+       
+        <div class="relative w-[373px] h-[320px] rounded-tr-[80px] rounded-bl-[80px] overflow-hidden mb-4">
+          <img 
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+            src="/img/16.jpg" 
+            alt="Blog post image"
+          >
+        </div>
+        
+        
+        <div class="flex justify-between items-center text-sm text-primary/80 mb-4">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="5"/>
+              <path d="M20 21a8 8 0 0 0-16 0"/>
+            </svg>
+            <span>John Doe</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2v4"/><path d="M16 2v4"/>
+              <rect width="18" height="18" x="3" y="4" rx="2"/>
+              <path d="M3 10h18"/>
+            </svg>
+            <span>Feb 23, 2024</span>
+          </div>
+        </div>
+        
+        
+        <p class="text-lg text-primary mb-6 leading-relaxed">
+          Lorem ipsum dolor sit amet consectetur. Est tempor morbi pellentesque.
+        </p>
+        
+        
+        <button class="flex items-center gap-2 text-primary hover:text-secondary transition-colors duration-200 ml-auto group/btn">
+          <span class="font-medium">View details</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/btn:translate-x-1">
+            <path d="m9 18 6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+      
+      
+      <div class="group w-[405px] h-[541px] rounded-tr-[96px] rounded-bl-[40px] border border-gray-200 p-4 hover:shadow-xl hover:border-gray-300 transition-all duration-300 hover:-translate-y-2">
+        <div class="relative w-[373px] h-[320px] rounded-tr-[80px] rounded-bl-[80px] overflow-hidden mb-4">
+          <img 
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+            src="/img/17.jpg" 
+            alt="Blog post image"
+          >
+        </div>
+        
+        <div class="flex justify-between items-center text-sm text-primary/80 mb-4">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="5"/>
+              <path d="M20 21a8 8 0 0 0-16 0"/>
+            </svg>
+            <span>John Doe</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2v4"/><path d="M16 2v4"/>
+              <rect width="18" height="18" x="3" y="4" rx="2"/>
+              <path d="M3 10h18"/>
+            </svg>
+            <span>Feb 23, 2024</span>
+          </div>
+        </div>
+        
+        <p class="text-lg text-primary mb-6 leading-relaxed">
+          Lorem ipsum dolor sit amet consectetur. Est tempor morbi pellentesque.
+        </p>
+        
+        <button class="flex items-center gap-2 text-primary hover:text-secondary transition-colors duration-200 ml-auto group/btn">
+          <span class="font-medium">View details</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/btn:translate-x-1">
+            <path d="m9 18 6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+      
+      
+      <div class="group w-[405px] h-[541px] rounded-tr-[96px] rounded-bl-[40px] border border-gray-200 p-4 hover:shadow-xl hover:border-gray-300 transition-all duration-300 hover:-translate-y-2">
+        <div class="relative w-[373px] h-[320px] rounded-tr-[80px] rounded-bl-[80px] overflow-hidden mb-4">
+          <img 
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+            src="/img/18.jpg" 
+            alt="Blog post image"
+          >
+        </div>
+        
+        <div class="flex justify-between items-center text-sm text-primary/80 mb-4">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="5"/>
+              <path d="M20 21a8 8 0 0 0-16 0"/>
+            </svg>
+            <span>John Doe</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2v4"/><path d="M16 2v4"/>
+              <rect width="18" height="18" x="3" y="4" rx="2"/>
+              <path d="M3 10h18"/>
+            </svg>
+            <span>Feb 23, 2024</span>
+          </div>
+        </div>
+        
+        <p class="text-lg text-primary mb-6 leading-relaxed">
+          Lorem ipsum dolor sit amet consectetur. Est tempor morbi pellentesque.
+        </p>
+        
+        <button class="flex items-center gap-2 text-primary hover:text-secondary transition-colors duration-200 ml-auto group/btn">
+          <span class="font-medium">View details</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/btn:translate-x-1">
+            <path d="m9 18 6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+      
+    </div>
+    
+   
+    <div class="text-center">
+      <button class="btn-secondary flex items-center justify-center gap-4 mx-auto hover:bg-secondary/90 hover:scale-[1.02] transition-all duration-200">
+        <span class="font-normal text-xl leading-[140%]">Read More</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 13V19H13"/>
+          <path d="M5 5L19 19"/>
+        </svg>
+      </button>
+    </div>
+    
+  </div>
+</section>
+    
+
+<footer class="w-full h-[528px] p-20 gap-20 flex text-white bg-primary">
+
+  <div class="w-[382px] h-[310px] grid gap-8">
+    <div class="flex gap-6 items-center">
+      <img class="w-[58px] h-[58px]" src="/img/19.png" alt="Ngopi Logo">
+      <p class="text-2xl font-normal leading-[120%] font-heading text-white"> Ngopi </p>
+    </div>  
+    <p class="text-body-lg text-white">
+      Discover tranquility at Ngopi a <br>
+      sanctuary for unwinding, where your <br>
+      evenings are perfected with relaxation <br>
+      and rich flavors.
+    </p>
+    <p class="text-body-lg leading-[100%] text-white">
+      <a href="mailto:hello@ngopi.com" class="hover:text-accent transition-colors"> hello@ngopi.com </a>
+      <br> Phone : +01 23456789 
+    </p>
+  </div>
+
+  <nav class="w-[818px] h-[368px] grid gap-10">
+    <div class="h-[187px] flex justify-between">
+
+     
+      <div class="flex flex-col gap-6">
+        <p class="text-body-xl text-center text-white"> Quick Links </p>
+        <ul class="w-[86px] h-[124px] gap-4 flex flex-col">
+          <li><a href="#Services" class="hover:text-accent transition-colors text-white"> Services </a></li>
+          <li><a href="#Portfolio" class="hover:text-accent transition-colors text-white"> Portfolio </a></li>
+          <li><a href="#About us" class="hover:text-accent transition-colors text-white"> About us </a></li>
+          <li><a href="#Testimonial" class="hover:text-accent transition-colors text-white"> Testimonial </a></li>
+        </ul>
+      </div>
+
+     
+      <div class="flex flex-col gap-6">
+        <p class="text-body-xl text-center text-white"> Resources </p>
+        <ul class="flex flex-col gap-4">
+          <li class="relative group">
+            <a href="https://estudy.framer.website/" target="_blank" class="hover:text-accent transition-colors text-white"> Support </a>
+            <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-max px-4 py-2 bg-black/90 shadow-lg rounded-lg border border-gray-200 text-sm text-white flex items-center gap-2 opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-auto z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m16 6-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414-8.586a4 4 0 1 0-5.657-5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379-8.551"/>
+              </svg>
+              <span class="text-white">Open estudy.framer.website</span>
+            </div>
+          </li> 
+          <li><a href="#" class="hover:text-accent transition-colors text-white"> Privacy Policy </a></li>
+          <li><a href="#" class="hover:text-accent transition-colors text-white"> Terms & Conditions </a></li>
+        </ul>
+      </div>
+
+      
+      <div class="flex flex-col gap-6">
+        <p class="text-body-xl text-center font-heading text-white"> Social Media </p>
+        <div class="flex gap-2 h-12 w-68">
+          <a href="#" class="w-full h-full flex items-center justify-center bg-white/8 hover:bg-white/15 transition-all rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" class="w-full h-full flex items-center justify-center bg-white/8 hover:bg-white/15 transition-all rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+            </svg>
+          </a>
+          <a href="#" class="w-full h-full flex items-center justify-center bg-white/8 hover:bg-white/15 transition-all rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="#" class="w-full h-full flex items-center justify-center bg-white/8 hover:bg-white/15 transition-all rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect width="4" height="12" x="2" y="9"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" class="w-full h-full flex items-center justify-center bg-white/8 hover:bg-white/15 transition-all rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/>
+              <path d="m10 15 5-3-5-3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="grid gap-6">
+      <p class="text-body-xl font-heading text-white"> Subscribe </p>
+      <div class="bg-white/8 rounded-3xl py-2 pr-2 pl-6 flex justify-between items-center">
+        <div class="flex gap-2 items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/>
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+          </svg>
+          <input class="placeholder-white/40 text-white placeholder:text-body-lg bg-transparent border-none outline-none w-full" type="email" placeholder="name@domain.com">
+        </div>
+        <button class="w-16 h-8 sm:w-44 sm:h-16 bg-secondary text-body-xl text-white rounded-lg cursor-pointer hover:bg-secondary/90 transition-colors hover:scale-[1.02]">
+          Send
+        </button>
+      </div> 
+    </div>
+  </nav>
+</footer>
+
 
   </main>
   </body>
